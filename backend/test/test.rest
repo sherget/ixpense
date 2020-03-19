@@ -1,0 +1,22 @@
+# $endpoint = http://localhost:3000/api
+GET $endpoint/categories
+
+# get one by id
+GET $endpoint/categories/5e7331d95bca67bd2a144c12
+
+# create
+POST $endpoint/categories
+Content-Type: application/json
+{
+    "name": "Insurance"
+}
+
+# update
+PATCH $endpoint/categories/5e7331d95bca67bd2a144c12
+Content-Type: application/json
+{
+    "name": "Other"
+}
+
+# delete
+DELETE $endpoint/categories/5e7331d95bca67bd2a144c12

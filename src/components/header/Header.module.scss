@@ -13,6 +13,13 @@
         background: linear-gradient(150deg,
         $primary 15%,$secondary 70%,$tertiary 94%);
 
+        &.authenticated {
+           height:4rem;
+          -webkit-transform: skewY(0deg);
+          transform: skewY(0deg);
+          background: linear-gradient(150deg, $primary 15%,$secondary 70%,$tertiary 94%);
+        }
+
         span {
             position: absolute;
             height:40px;
@@ -51,7 +58,7 @@
     position:absolute;
     z-index:99;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2.875fr 1.125fr;
     width:100%;
 
     div {
@@ -59,14 +66,22 @@
 
 
         svg {
-            padding-right:.75rem;
             cursor: pointer;
             color: $text-negative;
         }
 
+        .loginButton {
+            display: block;
+            color:$text-negative;
+            cursor:pointer;
+            text-transform: capitalize;
+            line-height: 1.25;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
         h3 {
           text-transform: uppercase;
-          padding-left: 1.25rem;
           margin: 0;
           color:$text-negative;
           text-align: left;
@@ -125,6 +140,14 @@
         border-bottom-right-radius: 5px;
         border-bottom-left-radius: 5px;
         cursor:pointer;
+
+        &.logOutBtn {
+            color:$text-negative;
+            background: $red;
+            &:hover {
+                background:$lightred;
+            }
+        }
 
         &:hover {
             background:$primary;

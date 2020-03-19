@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
 // Update expense from expenseid
 router.patch('/:id', getCategorie, async (req, res) => {
   if (req.body.name != null) {
-   res.expense.name = req.body.name
+   res.categorie.name = req.body.name
   }
 
   try {

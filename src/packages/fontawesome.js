@@ -14,7 +14,8 @@ import {
   faCoins,
   faUserShield,
   faTimes,
-  faCogs
+  faCogs,
+  faUserCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -30,5 +31,6 @@ library.add(
   faCoins,
   faUserShield,
   faTimes,
-  faCogs
+  faCogs,
+  faUserCircle
 );
