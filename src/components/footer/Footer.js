@@ -6,7 +6,7 @@ class Footer extends Component {
     render() {
         return (
           <footer>
-          <nav>
+          <nav className={styles.footerNav}>
             <a href="#123">footermenu1</a>
             <a href="#123">footermenu2</a>
             <a href="#123">footermenu3</a>
@@ -15,7 +15,8 @@ class Footer extends Component {
           <div>
             <p>
                 Legal notice:
-                C IXPENSE GmbH
+                <FontAwesomeIcon icon={['fas', 'copyright']} pull="left" size="lg" fixedWidth />
+                IXPENSE GmbH
                 Errorstroß 18a
                 35390 Gießen
             </p>

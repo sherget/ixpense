@@ -8,7 +8,6 @@ class Header extends Component {
 
     this.state = {
       menuActive: 'hidden',
-      loggedIn: false
     }
 
     this.toggleMenu = this.toggleMenu.bind(this)
@@ -28,37 +27,19 @@ class Header extends Component {
     }
   }
 
-  logIn = () => {
-    if (this.state.loggedIn === false) {
-      this.setState({
-        loggedIn: true
-      });
-      /* }, () => {console.log(this.state.menuActive)});*/
-    }
-  }
-
-  logOut = () => {
-    if (this.state.loggedIn === true) {
-      this.setState({
-        loggedIn: false
-      });
-      /* }, () => {console.log(this.state.menuActive)});*/
-    }
-  }
-
   render() {
     return (
-      <header>
+      <header id={styles.header}>
           <section id={styles.globalNav}>
               <div>
                   <h3>ixpense</h3>
               </div>
               <div>
-                  { this.state.loggedIn
+                  { this.props.loggedIn
                     ?
                       <FontAwesomeIcon onClick={() => this.toggleMenu()} icon={['fas', 'ellipsis-v']} pull="right" size="lg" fixedWidth />
                     :
-                      <span className={styles.loginButton} onClick={() => this.logIn()}>
+                      <span className={styles.loginButton} onClick={this.props.logInAction}>
                         <FontAwesomeIcon icon={['fas', 'user-circle']} pull="right" size="lg" fixedWidth />
                         <span>
                           login
@@ -69,7 +50,7 @@ class Header extends Component {
           </section>
 
 
-          { this.state.loggedIn
+          { this.props.loggedIn
           ?
             <div className={`${styles.mobileNavContainer} ${styles[this.state.menuActive]}`}>
                     <FontAwesomeIcon className={styles.exitMenu} onClick={() => this.toggleMenu()} icon={['fas', 'times']} pull="right" size="lg" fixedWidth />
@@ -105,13 +86,13 @@ class Header extends Component {
                               Settings
                           </a>
                     </nav>
-                    <button onClick={() => this.logOut()} className={styles.logOutBtn}>Logout</button>
+                    <button onClick={this.props.logOutAction} className={styles.logOutBtn}>Logout</button>
             </div>
             :
             <div></div>
           }
 
-          { this.state.loggedIn
+          { this.props.loggedIn
             ?
             <div className={styles.authenticated} id={styles.headerBg}>
             </div>

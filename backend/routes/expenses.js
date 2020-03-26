@@ -20,12 +20,15 @@ router.get('/:id', getExpense, async (req, res) => {
 // Create expense for userid
 router.post('/', async (req, res) => {
   const expense = new Expense({
-    userid: req.body.userid,
+    uuid: req.body.uuid,
     description: req.body.description,
     amount: req.body.amount,
     type: req.body.type,
     kind: req.body.kind,
     categories: req.body.categories,
+    recurring: req.body.recurring,
+    interval: req.body.interval,
+    dayOfTransfer: req.body.dayOfTransfer,
   })
 
   try {

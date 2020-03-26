@@ -20,6 +20,7 @@ router.get('/:id', getCategorie, async (req, res) => {
 // Create expense for userid
 router.post('/', async (req, res) => {
   const categorie = new Categorie({
+    uuid: req.body.uuid,
     name: req.body.name,
   })
 
